@@ -1,0 +1,10 @@
+{
+  "styles": {
+    "website": "website.css"
+  },
+  "plugins": [
+    "rtl"
+  ],
+  "pluginsConfig": {
+  }
+}
