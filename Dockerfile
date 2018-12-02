@@ -21,12 +21,11 @@ RUN npm install --global gitbook-cli &&\
 	gitbook fetch ${VERSION} &&\
 	npm cache clear &&\
 	rm -rf /tmp/*
-
-WORKDIR /srv/gitbook
-VOLUME /srv/gitbook
 COPY ./gitbook /srv/gitbook
+WORKDIR /srv/gitbook
 RUN gitbook install
 RUN gitbook build
+
 
 RUN mkdir -p /usr/share/nginx/html
 RUN cp -r /srv/gitbook/_book/* /usr/share/nginx/html/
